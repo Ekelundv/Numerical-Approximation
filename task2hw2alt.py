@@ -10,9 +10,9 @@ import numpy as np
 import sympy as sp
 from sympy.abc import x,y
 from scipy import *
-h=1/10000 #I replace 0 with h (a small number) so we wont divide by zero
-X=array([h,h,1,np.pi,np.pi,np.pi,5.5,5.5,2*pi])
-n=len(X)-1 
+#h=1/10000 #I replace 0 with h (a small number) so we wont divide by zero
+#X=array([h,h,1,np.pi,np.pi,np.pi,5.5,5.5,2*pi])
+#n=len(X)-1 
 
 
 def f(x):
@@ -21,6 +21,16 @@ def f(x):
 
 def g(x):               #this function is to create the first list in divdiff(X)
     return(sin(x)/x)
+    
+def Ts_points(n):
+    u = np.zeros(n)
+    for k in range(0, n-1):
+        u[k] = np.cos(((2*k + 1)/(2*n))*np.pi)
+    return u
+
+print(Ts_points(n))
+
+
 
 def divdiff(X):
     
